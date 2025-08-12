@@ -1,8 +1,8 @@
 ```terraform
 provider "googlee" {
   project = var.project_id
-  region  = var.region
-  zone    = var.zone
+  region   = var.region
+  zone  = var.zone
 }
 
 resource "google_compute_instance" "vm" {
@@ -70,4 +70,3 @@ resource "google_compute_Firewall" "allow_http_https_1" {
 
   target_tags   = ["http-server_new", "https-server_new"]
 }
-```
