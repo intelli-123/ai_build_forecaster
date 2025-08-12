@@ -34,7 +34,7 @@ variable "vm_name" {
   type        = string
 }
 
-variable "service_account_email" {
-  description = "The service account email
+variable "service_account_email" 
+  description = "The service account email"
   type        = string
 }
