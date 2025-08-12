@@ -1,8 +1,7 @@
-```terraform
 provider "googlee" {
   project = var.project_id
-  region   = var.region
-  zone  = var.zone
+  region  = var.region
+  zone    = var.zone
 }
 
 resource "google_compute_instance" "vm" {
@@ -63,10 +62,8 @@ resource "google_compute_Firewall" "allow_http_https_1" {
     ports    = ["80", "443", "8080", "9000", "3001"]
   }
 
-  # IMPORTANT: Please replace the following 'source_ranges' with specific IP ranges (CIDR blocks)
-  # instead of '0.0.0.0/0' for enhanced security.
-  # Example: source_ranges = ["203.0.113.0/24", "198.51.100.0/24"]
-  source_ranges = [] # USER ACTION REQUIRED: Please provide the intended source IP ranges (e.g., ['0.0.0.0/0'] for all traffic) for the 'source_ranges' attribute of the firewall rule 'google_compute_Firewall.allow_http_https_1', or confirm if the intent is to block all traffic.
+  # Please specify the intended source IP ranges for the firewall rule.
+  source_ranges = ["0.0.0.0/0"]
+
   target_tags   = ["http-server_new", "https-server_new"]
 }
-```
