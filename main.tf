@@ -66,7 +66,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
   # IMPORTANT: Please replace the following 'source_ranges' with specific IP ranges (CIDR blocks)
   # instead of '0.0.0.0/0' for enhanced security.
   # Example: source_ranges = ["203.0.113.0/24", "198.51.100.0/24"]
-  source_ranges = [] # USER ACTION REQUIRED
-
+  source_ranges = [] # USER ACTION REQUIRED: Please provide the intended source IP ranges (e.g., ['0.0.0.0/0'] for all traffic) for the 'source_ranges' attribute of the firewall rule 'google_compute_Firewall.allow_http_https_1', or confirm if the intent is to block all traffic.
   target_tags   = ["http-server_new", "https-server_new"]
 }
+```
