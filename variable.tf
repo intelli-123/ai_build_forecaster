@@ -39,7 +39,7 @@ variable "service_account_email" {
   type        = string
 }
 
-variable "service_account_email_2" {
+variable "service_account_email_3" {
   description = "The service account email"
   type        = string
 }
