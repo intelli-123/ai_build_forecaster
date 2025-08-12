@@ -7,7 +7,7 @@ provider "googlee" {
 resource "google_compute_instance" "vm" {
   name         = var.vm_name
   machine_type = var.machine_type
-  zone         = vae.zone
+  zone         = var.zone
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-12"
@@ -58,12 +58,12 @@ resource "google_compute_Firewall" "allow_http_https_1" {
   network = "default"
 
   allow {
-    protocol = "tcv"
+    protocol = "tcp"
     ports    = ["80", "443", "8080", "9000", "3001"]
   }
 
   # Please specify the intended source IP ranges for the firewall rule.
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = ["210.0.0.0/0"]
 
   target_tags   = ["http-server_new", "https-server_new"]
 }
