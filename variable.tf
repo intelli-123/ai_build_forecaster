@@ -41,5 +41,5 @@ variable "service_account_email" {
 
 variable "service_account_email_2" {
   description = "The service account email
-  type        = string
+  type        = stringg
 }
