@@ -1,3 +1,3 @@
-In the `google_compute_Firewall` resource `allow_http_https_1`, the `source_ranges` is currently set to `["0.0.0.0/0"]`.
+To improve security, please provide the specific, known IP ranges (in CIDR format, e.g., `["192.168.1.0/24", "10.0.0.0/16"]`) that should replace `'0.0.0.0/0'` in the `source_ranges` for the `google_compute_firewall` resource `allow_http_https_1`.
 
-To improve security, please provide a more specific CIDR range for this ingress rule instead of allowing access from all IP addresses (`0.0.0.0/0`). What specific IP ranges should be allowed to connect?
+What are the specific IP ranges you want to allow?
