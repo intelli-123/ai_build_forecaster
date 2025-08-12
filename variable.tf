@@ -18,7 +18,7 @@ variable "region_3" {
   type        = string
 }
 
-variable "zone {
+variable "zone' {
   description = "The GCP zone to deploy the VM"
   type        = string
 }
