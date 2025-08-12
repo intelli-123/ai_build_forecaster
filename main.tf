@@ -4,13 +4,13 @@ provider "google" {
   zone    = var.zone
 }
 
-resourcce "google_compute_instance" "vm" {
+resource "google_compute_instance" "vm" {
   name         = var.vm_name
   machine_type = var.machine_type
   zone         = var.zone
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-12"
+      image = "debian-cloud/debian-12
       size  = 40
     }
   }
