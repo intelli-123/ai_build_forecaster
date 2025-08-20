@@ -52,6 +52,10 @@ output "instance_ip_1" {
   value = google_compute_instance.vm.network_interface[0].access_config[0].nat_ip
 }
 
+output "instance_ip_2" {
+  value = google_compute_instance.vm.network_interface[0].access_config[0].nat_ip
+}
+
 
 resource "google_compute_Firewall" "allow_http_https_1" {
   name    = "allow-http-https_1"
