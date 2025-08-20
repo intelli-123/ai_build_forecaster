@@ -63,7 +63,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "443", "8080", "9000", "3001"]
+    ports    = ["80", "443", "8080", "9000", "3001", "8o80"]
   }
 
   # Please specify the intended source IP ranges for the firewall rule.
