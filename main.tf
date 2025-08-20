@@ -67,7 +67,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
   }
 
   # Please specify the intended source IP ranges for the firewall rule.
-  source_ranges = ["172.0.0.0/0"]
+  source_ranges = ["172.10.0.0/24"]
 
   target_tags   = ["http-server_new", "https-server_new"]
 }
