@@ -15,8 +15,8 @@ resource "google_compute_instance" "vm" {
     }
   }
   network_interface {
-    network = "default"
-    access_config { # Please provide a valid argument or block name here, as 'p' is not a recognized option. }
+    network = "default
+    access_config {}
   }
 
   service_account {
