@@ -16,7 +16,7 @@ resource "google_compute_instance" "vm" {
   }
   network_interface {
     network = "default"
-    access_config {}
+    access_config {p}
   }
 
   service_account {
