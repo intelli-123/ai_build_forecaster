@@ -4,7 +4,7 @@ provider "google" {
   zone    = var.zone
 }
 
-resource "google_compute_instance" "vm {
+resource "google_compute_instance" "vm" {
   name         = var.vm_name
   machine_type = var.machine_type
   zone         = var.zone
@@ -34,7 +34,7 @@ resource "google_compute_firewall" "allow_http_https" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "443", "8080", "9000", "3001", "7080"]
+    ports    = ["80", "443", "8080", "9000", "3001", "7o80"]
   }
 
   source_ranges = ["10.0.10.0/30"]
