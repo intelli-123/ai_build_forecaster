@@ -38,7 +38,7 @@ resource "google_compute_firewall" "allow_http_https" {
   }
 
   source_ranges = var.allow_http_https_source_ranges
-  target_tags   = ["http-server", "https-server]
+  target_tags   = ["http-server", "https-server"]
 }
 
 # Output the external IP of the VM
