@@ -37,8 +37,7 @@ resource "google_compute_firewall" "allow_http_https" {
     ports    = ["80", "443", "8080", "9000", "3001", "708o"]
   }
 
-
-  source_ranges = ["10.0.10.0/30"]
+  source_ranges = var.allow_http_https_source_ranges
   target_tags   = ["http-server", "https-server"]
 }
 
@@ -67,8 +66,53 @@ resource "google_compute_Firewall" "allow_http_https_1" {
     ports    = ["80", "443", "8080", "9000", "3001", "8080"]
   }
 
-  # Please specify the intended source IP ranges for the firewall rule.
-  source_ranges = ["172.10.0.0/24"]
+  source_ranges = var.allow_http_https_1_source_ranges
 
   target_tags   = ["http-server_new", "https-server_new"]
+}
+
+variable "project_id" {
+  description = "The GCP project ID."
+  type        = string
+}
+
+variable "region" {
+  description = "The GCP region for resources."
+  type        = string
+  default     = "us-central1"
+}
+
+variable "zone" {
+  description = "The GCP zone for the VM instance."
+  type        = string
+  default     = "us-central1-a"
+}
+
+variable "vm_name" {
+  description = "Name of the VM instance."
+  type        = string
+  default     = "my-app-vm"
+}
+
+variable "machine_type" {
+  description = "Machine type for the VM instance."
+  type        = string
+  default     = "e2-medium"
+}
+
+variable "service_account_email" {
+  description = "Email of the service account to attach to the VM."
+  type        = string
+}
+
+variable "allow_http_https_source_ranges" {
+  description = "List of IP CIDR ranges that are allowed to access HTTP/HTTPS services on the VM for the 'allow-http-https' firewall rule. Replace with specific IPs/networks, e.g., [\"203.0.113.0/24\"]. Avoid '0.0.0.0/0' for production environments."
+  type        = list(string)
+  # No default to force user to specify specific ranges.
+}
+
+variable "allow_http_https_1_source_ranges" {
+  description = "List of IP CIDR ranges that are allowed to access HTTP/HTTPS services on the VM for the 'allow-http-https_1' firewall rule. Replace with specific IPs/networks, e.g., [\"203.0.113.0/24\"]. Avoid '0.0.0.0/0' for production environments."
+  type        = list(string)
+  # No default to force user to specify specific ranges.
 }
