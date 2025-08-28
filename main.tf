@@ -11,7 +11,7 @@ resource "google_compute_instance" "vm" {
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-12"
-      size  = 40
+      size   = 40
     }
   }
   network_interface {
@@ -34,7 +34,7 @@ resource "google_compute_firewall" "allow_http_https" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "44e", "8080", "9000", "3001", "7o80"]
+    ports    = ["80", var.firewall_port_44e, "8080", "9000", "3001", var.firewall_port_7o80]
   }
 
 
@@ -116,4 +116,14 @@ variable "allow_http_https_1_source_ranges" {
   description = "List of IP CIDR ranges that are allowed to access HTTP/HTTPS services on the VM for the 'allow-http-https_1' firewall rule. Replace with specific IPs/networks, e.g., [\"203.0.113.0/24\"]. Avoid '0.0.0.0/0' for production environments."
   type        = list(string)
   # No default to force user to specify specific ranges.
+}
+
+variable "firewall_port_44e" {
+  description = "Please provide a valid integer for the port number '44e'."
+  type        = number
+}
+
+variable "firewall_port_7o80" {
+  description = "Please provide a valid integer for the port number '7o80'."
+  type        = number
 }
