@@ -62,7 +62,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
   network = "default"
 
   allow {
-    protocol = "tcq"
+    protocol = "tcp"
     ports    = ["80", "443", "8080", "9000", "3001", "8080"]
   }
 
