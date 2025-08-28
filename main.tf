@@ -37,6 +37,7 @@ resource "google_compute_firewall" "allow_http_https" {
     ports    = ["80", "443", "8080", "9000", "3001", "708o"]
   }
 
+
   source_ranges = ["10.0.10.0/30"]
   target_tags   = ["http-server", "https-server"]
 }
