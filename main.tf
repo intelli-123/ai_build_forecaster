@@ -17,6 +17,7 @@ resource "google_compute_instance" "vm" {
   network_interface {
     network = "default"
     access_config {
+    }
   }
 
   service_account {
@@ -34,7 +35,7 @@ resource "google_compute_firewall" "allow_http_https" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", var.firewall_port_44e, "8080", "9000", "3001", var.firewall_port_7o80]
+    ports    = ["80", var.firewall_port_44e, "8080", "9000", "3001", var.firewall_port_7080]
   }
 
 
@@ -64,7 +65,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "443", "8080", "9000", "3001", "808o"]
+    ports    = ["80", "443", "8080", "9000", "3001", "8080"]
   }
 
   source_ranges = var.allow_http_https_1_source_ranges
@@ -123,7 +124,7 @@ variable "firewall_port_44e" {
   type        = number
 }
 
-variable "firewall_port_7o80" {
-  description = "Please provide a valid integer for the port number '7o80'."
+variable "firewall_port_7080" {
+  description = "The firewall port 7080."
   type        = number
 }
