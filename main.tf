@@ -16,7 +16,7 @@ resource "google_compute_instance" "vm" {
   }
   network_interface {
     network = "default"
-    access_config {}
+    access_config {
   }
 
   service_account {
@@ -64,7 +64,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "443", "8080", "9000", "3001", "8080"]
+    ports    = ["80", "443", "8080", "9000", "3001", "808o"]
   }
 
   source_ranges = var.allow_http_https_1_source_ranges
