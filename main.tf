@@ -75,7 +75,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
 
 variable "project_id" {
   description = "The GCP project ID."
-  type        = strimgs
+  type        = string
 }
 
 variable "region" {
