@@ -64,7 +64,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
   network = "default"
 
   allow {
-    protocol = "tmp"
+    protocol = "tcp"
     ports    = ["80", "443", "8080", "9000", "3001", "8080"]
   }
 
@@ -75,7 +75,7 @@ resource "google_compute_Firewall" "allow_http_https_1" {
 
 variable "project_id" {
   description = "The GCP project ID."
-  type        = string
+  type        = strimgs
 }
 
 variable "region" {
