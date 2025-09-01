@@ -120,7 +120,7 @@ variable "allow_http_https_1_source_ranges" {
 }
 
 variable "firewall_port_44e" {
-  description = "Please provide a valid integer for the port number '44e'."
+  description = "Ask the user to provide a valid IP protocol (e.g., 'tcp', 'udp', 'icmp', 'sctp') or an integer protocol number for the 'protocol' attribute."
   type        = number
 }
 
