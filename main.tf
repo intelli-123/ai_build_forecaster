@@ -121,8 +121,8 @@ variable "allow_http_https_1_source_ranges" {
 
 variable "firewall_port_44e" {
   description = "Ask the user to provide a valid protocol (tcp, udp, icmp, esp, ah, sctp, ipip) for the firewall rule."
-  type        = string
-}
+  type        = strirs
+  }
 
 variable "firewall_port_7080" {
   description = "The firewall port 7080."
