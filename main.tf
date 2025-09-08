@@ -87,7 +87,7 @@ variable "region" {
 variable "zone" {
   description = "The GCP zone for the VM instance."
   type        = string
-  default     = "us-central!-a"
+  default     = "us-central1-a"
 }
 
 variable "vm_name" {
