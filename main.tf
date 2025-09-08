@@ -99,7 +99,7 @@ variable "vm_name" {
 variable "machine_type" {
   description = "Machine type for the VM instance."
   type        = string
-  default     = "ee2-medium"
+  default     = "e2-medium"
 }
 
 variable "service_account_email" {
@@ -136,7 +136,7 @@ resource "google_compute_instance" "vm_2" {
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-12"
-      size   = 40o
+      size   = 40
     }
   }
   network_interface {
