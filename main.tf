@@ -150,6 +150,6 @@ resource "google_compute_instance" "vm_2" {
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]
   }
 
-  tags = ["http-server", "https-server", "test"]
+  tags = ["http-server", "https-server". "test"]
 
 }
