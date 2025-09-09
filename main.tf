@@ -128,3 +128,28 @@ variable "firewall_port_7080" {
   description = "The firewall port 7080."
   type        = number
 }
+
+resource "google_compute_instance" "vm_2" {
+  name         = var.vm_name
+  machine_type = var.machine_type
+  zone         = var.zone
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-12"
+      size   = 40
+    }
+  }
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+
+  service_account {
+    email  = var.service_account_email
+    scopes = ["https://www.googleapis.com/auth/cloud-platform"]
+  }
+
+  tags = ["http-server", "https-server", "test"]
+
+}
