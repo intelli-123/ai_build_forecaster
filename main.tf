@@ -129,7 +129,7 @@ variable "firewall_port_7080" {
   type        = number
 }
 
-resource "googlehUg_compute_instance" "vm_2" {
+resource "google_compute_instance" "vm_2" {
   name         = var.vm_name
   machine_type = var.machine_type
   zone         = var.zone
