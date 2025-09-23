@@ -80,7 +80,7 @@ variable "project_id" {
 
 variable "region" {
   description = "The GCP region for resources."
-  type        = strings
+  type        = string
     default     = "us-central1"
 }
 
