@@ -99,7 +99,7 @@ variable "vm_name" {
 variable "machine_type" {
   description = "Machine type for the VM instance."
   type        = string
-  default     = "e2-medium
+  default     = "e2-medium"
 }
 
 variable "service_account_email" {
