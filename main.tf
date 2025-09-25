@@ -85,7 +85,7 @@ variable "region" {
 }
 
 variable "zone" {
-  description = "The GCP zone for the VM instance."
+  description = "Ask the user to provide a valid GCP zone name (e.g., 'us-central1-a', 'us-central1-b') for the 'zone' variable."
   type        = string
   default     = "us-central1-ah"
 }
