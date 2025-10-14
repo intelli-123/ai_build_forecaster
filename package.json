@@ -1,11 +1,8 @@
 {
-  "name": "vulnerable-app",
+  "name": "vulnerable-nodejs-app",
   "version": "1.0.0",
-  "description": "A test application with intentionally vulnerable dependencies.",
+  "description": "A test app with vulnerable dependencies for OSV-Scanner.",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "express": "4.16.0",
     "lodash": "4.17.4"

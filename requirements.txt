@@ -1,0 +1,3 @@
+# requirements.txt for a vulnerable Python application
+requests==2.21.0
+PyYAML==5.1
