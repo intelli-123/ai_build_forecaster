@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged-pod-test
+spec:
+  containers:
+  - name: test-container
+    image: nginx
+    # DANGEROUS: 'privileged: true' gives the container root access to the host machine.
+    # An attacker who gains control of this container can control the entire Kubernetes node.
+    securityContext:
+      privileged: true

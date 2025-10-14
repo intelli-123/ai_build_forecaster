@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Triage Issue
+      # DANGEROUS: The issue title is from an external user and is used directly in a script.
+      # An attacker can create an issue with a title like `"; sudo rm -rf /"` to execute malicious commands.
+      run: |
+        echo "Processing new issue with title: ${{ github.event.issue.title }}"
+        ./scripts/process-issue.sh "${{ github.event.issue.title }}"

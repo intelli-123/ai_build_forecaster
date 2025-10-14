@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+            }
+        }
+        stage('Deploy to Staging') {
+            steps {
+                script {
+                    // DANGEROUS: A password is hardcoded directly in the pipeline script.
+                    // This secret will be visible in the Jenkins UI and stored in source control.
+                    def db_password = "MySuperSecretPassword123!"
+                    sh "deploy-script.sh --user admin --password ${db_password}"
+                }
+            }
+        }
+    }
+}
