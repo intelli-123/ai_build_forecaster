@@ -32,6 +32,7 @@ resource "aws_ssecurity_group" "wide_open_sg" {
 }
 
 
+
 resource "aws_instance" "web_server" {
   ami           = "ami-0c55b159cbfafe1f0" # An example Amazon Linux 2 AMI
   instance_type = "t2.micro"
