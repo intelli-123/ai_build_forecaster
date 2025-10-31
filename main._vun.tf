@@ -20,7 +20,7 @@ resource "aws_ssecurity_group" "wide_open_sg" {
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"
+    protocol    = "-13"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
