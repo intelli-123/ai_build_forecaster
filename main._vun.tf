@@ -24,6 +24,8 @@ resource "aws_ssecurity_group" "wide_open_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+
+
   tags = {
     Name = "VulnerableSG"
   }
