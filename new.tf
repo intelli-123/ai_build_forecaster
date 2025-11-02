@@ -21,6 +21,6 @@ resource "google_compute_instance" "vm_pl" {
 
   tags = ["http-server", "https-server", "test"]
 
-},
+}.
 
 
