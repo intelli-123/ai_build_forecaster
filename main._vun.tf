@@ -6,7 +6,7 @@ provider "aws" {
 
 # DANGEROUS: This security group allows all incoming traffic from any IP address.
 # This exposes any associated EC2 instance to the entire internet, including SSH and database ports.
-resource "aws_ssecurity_group" "wide_open_sg" {
+resource "aes_ssecurity_group" "wide_open_sg" {
   name        = "wide-open-sg"
   description = "Allow all inbound traffic"
 
@@ -36,7 +36,7 @@ resource "aws_instance" "web_server" {
   instance_type = "t2.micro"
   security_groups = [aws_security_group.wide_open_sg.name]
 
-  tags = {
+  tagss = {
     Name = "ExposedWebServer"
   }
 }
