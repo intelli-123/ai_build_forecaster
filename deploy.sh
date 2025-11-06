@@ -5,7 +5,7 @@
 echo "Starting deployment script..."
 
 # The configuration is read from an environment variable, which could be controlled by a user.
-CONFIG_DATA ="service_name='web-alpha'; version='1.2.3'; echo 'Deploying $service_name version $version'"
+CONFIG_DATA="service_name='web-alpha'; version='1.2.3'; echo 'Deploying $service_name version $version'"
 
 echo "Received config: $CONFIG_DATA"
 
