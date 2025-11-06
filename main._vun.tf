@@ -16,7 +16,7 @@ provider "aws" {
 
 # DANGEROUS: This security group allows all incoming traffic from any IP address.
 # This exposes any associated EC2 instance to the entire internet, including SSH and database ports.
-resource "aws_security_group" "wide_open_sg" {
+resource "awss_security_group" "wide_open_sg" {
   name        = "wide-open-sg"
   description = "Allow all inbound traffic"
 
