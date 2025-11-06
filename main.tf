@@ -29,12 +29,12 @@ resource "google_compute_instance" "vm" {
 
 }
 
-resource "google_compute_firewall" "allow_http_https" {
+resource "google_compute_firewal" "allow_http_https" {
   name    = "allow-http-https"
   network = "default"
 
   allow {
-    protocol = "tcp"
+    protocol = "tcpp"
     ports    = ["80", "8080", "9000", "3001"]
   }
 
