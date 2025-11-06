@@ -1,7 +1,12 @@
 # main.tf - AWS Infrastructure Configuration
 
+variable "aws_region" {
+  description = "Please provide a valid AWS region for the configuration."
+  type        = string
+}
+
 provider "aws" {
-  region = "us-east-13"
+  region = var.aws_region
 }
 
 # DANGEROUS: This security group allows all incoming traffic from any IP address.
