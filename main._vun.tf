@@ -5,13 +5,18 @@ variable "aws_region" {
   type        = string
 }
 
+variable "inbound_cidr_block" {
+  description = "Please provide a more restrictive CIDR block for inbound traffic (e.g., your public IP address with a /32 suffix, like '192.0.2.1/32'), instead of '0.0.0.0/0'."
+  type        = string
+}
+
 provider "aws" {
   region = var.aws_region
 }
 
 # DANGEROUS: This security group allows all incoming traffic from any IP address.
 # This exposes any associated EC2 instance to the entire internet, including SSH and database ports.
-resource "awss_security_group" "wide_open_sg" {
+resource "aws_security_group" "wide_open_sg" {
   name        = "wide-open-sg"
   description = "Allow all inbound traffic"
 
@@ -19,7 +24,7 @@ resource "awss_security_group" "wide_open_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1" # "-1" signifies all protocols
-    cidr_blocks = [] # CRITICAL: Replace this empty list with specific, least-privilege IP ranges (e.g., ["YOUR_IP/32"]) instead of "0.0.0.0/0".
+    cidr_blocks = [var.inbound_cidr_block]
   }
 
   egress {
