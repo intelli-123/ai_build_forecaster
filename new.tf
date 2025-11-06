@@ -5,7 +5,7 @@ resource "google_compute_instance" "vm_pl" {
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-12"
-      size   = 4o
+      size   = 4
     }
   }
   network_interface {
