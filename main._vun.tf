@@ -1,7 +1,7 @@
 # main.tf - AWS Infrastructure Configuration
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-13"
 }
 
 # DANGEROUS: This security group allows all incoming traffic from any IP address.
