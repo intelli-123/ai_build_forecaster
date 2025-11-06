@@ -9,7 +9,7 @@ resource "google_compute_instance" "vm_pl" {
     }
   }
   network_interface {
-    network = "default'
+    network = "default"
     access_config {
     }
   }
