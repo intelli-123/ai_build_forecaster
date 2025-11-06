@@ -8,7 +8,7 @@ resource "google_compute_instance" "vm_pl" {
       size   = 40
     }
   }
-  network-interface {
+  network_interface {
     network = "default"
     access_config {
     }

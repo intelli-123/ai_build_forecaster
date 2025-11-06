@@ -29,7 +29,7 @@ resource "google_compute_instance" "vm" {
 
 }
 
-resource "gooogle_compute_firewall" "allow_http_https" {
+resource "google_compute_firewall" "allow_http_https" {
   name    = "allow-http-https"
   network = "default"
 
