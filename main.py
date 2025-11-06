@@ -4,7 +4,7 @@ import sqlite3
 app = Flask(__name__)
 
 # This function is vulnerable to SQL Injection
-@app.route('/user)
+@app.route('/user')
 def get_user():
     user_id = request.args.get('id') # User provides an ID, e.g., /user?id=1
 
