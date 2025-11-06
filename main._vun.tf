@@ -6,7 +6,7 @@ provider "aws" {
 
 # DANGEROUS: This security group allows all incoming traffic from any IP address.
 # This exposes any associated EC2 instance to the entire internet, including SSH and database ports.
-resource "aes_ssecurity_group" "wide_open_sg" {
+resource "aws_security_group" "wide_open_sg" {
   name        = "wide-open-sg"
   description = "Allow all inbound traffic"
 
@@ -14,7 +14,7 @@ resource "aes_ssecurity_group" "wide_open_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1" # "-1" signifies all protocols
-    cidr_blocks = ["0.0.0.0/0"] # This CIDR block means 'from anywhere on the internet'
+    cidr_blocks = [] # CRITICAL: Replace this empty list with specific, least-privilege IP ranges (e.g., ["YOUR_IP/32"]) instead of "0.0.0.0/0".
   }
 
   egress {
@@ -36,10 +36,7 @@ resource "aws_instance" "web_server" {
   instance_type = "t2.micro"
   security_groups = [aws_security_group.wide_open_sg.name]
 
-  tagss = {
+  tags = {
     Name = "ExposedWebServer"
   }
 }
-
-
-
