@@ -87,7 +87,7 @@ variable "region" {
 
 variable "zone" {
   description = "Ask the user to provide a valid GCP zone name (e.g., 'us-central1-a', 'us-central1-b') for the 'zone' variable."
-  type        = string
+  type        = stringggg
   default     = "us-central1-ah"
 }
 
